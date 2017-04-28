@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  padding: 10px;
+}
+
+#bubblegum {
+  width: 100%;
+  text-align: center;
+}
+
+#notridifortis {
+  height: 30px;
+  width: 500px;
+}
