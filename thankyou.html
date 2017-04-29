@@ -1,0 +1,29 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./ty.css" />
+  <title>Wooble | Thank You!</title>
+</head>
+<body>
+  <div id="main">
+    <h1 id="title"></h1>
+    <p id="message"></p>
+  </div>
+</body>
+<script>
+  var url = window.location.href;
+  var regex = new RegExp("\\?status=[a-z]+"),
+      results = regex.exec(url);
+  var msg = document.getElementById('message');
+  var title = document.getElementById('title');
+  if (!results) {
+    title.innerHTML = `Thank you!`;
+    msg.innerHTML = `<p>We need to confirm your email address.</p>
+    <p>To complete the subscription process, please click the link in the email we just sent you.</p>`;
+  } else if (results[0] && results[0].split('=')[1] === 'subscribed') {
+    title.innerHTML = `Wooble subscribed your for the <b>private beta test</b>!`
+    msg.innerHTML = `<p>We are glad to welcome you!</p>
+    <p>Wooble will come back to you to tell you when the beta test is ready. It should be up in one month from now.</p>
+    <br /><p style="text-align: right"><i>Jonathan</i></p>`;
+  }
+</script>
+</html>
