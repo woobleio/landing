@@ -16,3 +16,23 @@ h1 {
   height: 30px;
   width: 500px;
 }
+
+#form {
+  display: none;
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 8%;
+  animation: formPop 2s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes formPop {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
