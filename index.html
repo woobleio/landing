@@ -1,6 +1,6 @@
 <html>
 <head>
-  <script src="https://d1rqhuw03ddqun.cloudfront.net/dc8b37d8943b75ee28ffeaf54bbfe8d9e4c82daf-9/wooble.js"></script>
+  <script src="https://d1rqhuw03ddqun.cloudfront.net/dc8b37d8943b75ee28ffeaf54bbfe8d9e4c82daf-10/wooble.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <link rel="icon" type="image/png" href="https://d3dppz6vjvbt4r.cloudfront.net/favico.png" />
   <title>Wooble | For the Web</title>
@@ -8,10 +8,24 @@
 </head>
 <body>
   <div id="main">
-    <h1>This page is ugly right? Let me introduce you Wooble, it will make it prettier just for you. First, tell him to do his job by pressing the button below</h1>
+    <h1>This page is ugly right? Let me introduce you Wooble, it will make it prettier just for you. First, tell it to do its job by pressing the button below</h1>
     <div id="bubblegum">
       <button id="notridifortis" onclick="imSureYouLookedAtTheSourceCode()">Okay Wooble, do your things then...</button>
     </div>
+  </div>
+  <div id="wut">
+    <h1>You probably wonder what I did there? Here is what I did!</h1>
+    <span class="step">1</span>
+    <p>
+      You clicked on the button to call me, I'm glad you did that!
+    </p>
+    <br /><span class="step">2</span>
+    <p>
+      I <b>retrieved two templates*</b> from my server, and I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">here</span> and the second one is <span id="here-2" class="here">here</span>.
+    </p>
+    <p id="in">
+      <i>* The two templates was created by my mentor! But anyone can use them, so you can! That's why you may join me by subscribing to the beta test, you can be my mentor to change the web for the better</i>
+    </p>
   </div>
   <div id="form"></div>
 </body>
@@ -34,12 +48,29 @@
         var emailForm = chimp._getForm()['EMAIL'];
         emailForm.style.height = '50px';
 
-        chimp.setTitle('Be a part of the adventure and subscribe for a private beta test');
+        chimp.setTitle('Be a part of the adventure and subscribe for a free private beta test');
         chimp.setInfo('');
 
-        document.getElementById('form').style.display = 'block';
+        document.getElementById('form').style.display = 'inline-block';
+        document.getElementById('wut').style.display = 'inline-block';
       }
     );
+
+    var here1 = document.getElementById('here-1');
+    here1.addEventListener('mouseover', function() {
+      document.getElementById('main').setAttribute('class', 'highlight');
+    });
+    here1.addEventListener('mouseout', function() {
+      document.getElementById('main').setAttribute('class', '');
+    });
+
+    var here2 = document.getElementById('here-2');
+    here2.addEventListener('mouseover', function() {
+      document.getElementById('form').setAttribute('class', 'highlight');
+    });
+    here2.addEventListener('mouseout', function() {
+      document.getElementById('form').setAttribute('class', '');
+    });
   }
 </script>
 </html>

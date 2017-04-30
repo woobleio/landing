@@ -1,6 +1,9 @@
 body {
   margin: 0;
-  overflow: hidden;
+}
+
+.highlight {
+  box-shadow: 0 0 10px #940650;
 }
 
 h1 {
@@ -17,15 +20,83 @@ h1 {
   width: 500px;
 }
 
+#header-text {
+  color: white;
+}
+
+#in {
+  margin-top: 50px !important;
+  width: 90% !important;
+}
+
+#wut {
+  display: none;
+  position: relative;
+  vertical-align: top;
+  width: 47%;
+  min-height: 58%;
+  margin-top: 5px;
+  border-right: 1px dashed #940650;
+  padding-left: 35px;
+  padding-bottom: 60px;
+}
+
+.here {
+  padding: 2px 4px;
+  border: 1px solid #940650;
+  border-radius: 3px;
+}
+.here:hover {
+  cursor: help;
+  background-color: #940650;
+  color: white !important;
+}
+
+.step {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #940650;
+  border: 1px solid #940650;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: top;
+  margin-right: 8px;
+  margin-bottom: 50px;
+}
+#wut h1 {
+  font-weight: 200;
+}
+#wut h1, #wut p, #wut p span {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #940650;
+  text-align: left;
+}
+#wut p {
+  display: inline-block;
+  font-size: 1.2em;
+  width: 80%;
+  margin: 0;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+#wut h1 {
+  padding-right: 20%;
+}
+
 #form {
   display: none;
-  width: 65%;
-  margin: 0 auto;
+  width: 47%;
   margin-top: 8%;
   animation: formPop 2s;
   animation-delay: 1.2s;
   animation-fill-mode: forwards;
   opacity: 0;
+  padding-left: 10px;
 }
 
 @keyframes formPop {
