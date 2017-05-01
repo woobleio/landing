@@ -1,10 +1,13 @@
 <html>
 <head>
-  <script src="https://d1rqhuw03ddqun.cloudfront.net/dc8b37d8943b75ee28ffeaf54bbfe8d9e4c82daf-10/wooble.js"></script>
+  <script src="https://d1rqhuw03ddqun.cloudfront.net/dc8b37d8943b75ee28ffeaf54bbfe8d9e4c82daf-11/wooble.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <link rel="icon" type="image/png" href="https://d3dppz6vjvbt4r.cloudfront.net/favico.png" />
   <title>Wooble | For the Web</title>
   <meta charset="UTF-8">
+  <meta name="author" content="Jonathan Serra">
+  <meta name="keywords" content="JS,wooble,template,webcomponents">
+  <meta name="description" content="Looking for a tool that will help you to improve your website? Wooble might be for you. Subscribe to the closed beta!">
 </head>
 <body>
   <div id="main">
@@ -14,28 +17,30 @@
     </div>
   </div>
   <div id="wut">
-    <h1>You probably wonder what I did there? Here is what I did!</h1>
+    <h1>I'm here to help you to improve your website. Here is what I just did!</h1>
     <span class="step">1</span>
     <p>
-      You clicked on the button to call me, I'm glad you did that!
+      You clicked on the button to wake me up, I'm glad you did that!
     </p>
     <br /><span class="step">2</span>
     <p>
-      I <b>retrieved two templates*</b> from my server, and I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">here</span> and the second one is <span id="here-2" class="here">here</span>.
+      I <b>retrieved two templates*</b> from my server, and I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">here<span id="here-1-arrow"></span></span> and the second one is <span id="here-2" class="here">here<span id="here-2-arrow"></span></span>.
     </p>
     <p id="in">
-      <i>* The two templates was created by my mentor! But anyone can use them, so you can! That's why you may join me by subscribing to the beta test, you can be my mentor to change the web for the better</i>
+      <i>* The two templates were made by my creator! But anyone can use them and anyone can create new templates and so can you! That's why you may join me by requesting an early access</i>
     </p>
   </div>
+  <div id="vr"></div>
   <div id="form"></div>
 </body>
 <script>
   function imSureYouLookedAtTheSourceCode() {
-    // But to understand what's going on, you should try the beta, my friend.
+    // But to understand what's going on, you should try the beta, my friend. Email me at jonathan@wooble.io to know more :)
     Wb('landH').init('#main').then(
       obj => {
-        obj.addTopText('Done. Hey! I\'m Wooble, let me be your website companion!');
+        obj.addTopText('Done. Hey! I\'m Wooble, your future website companion');
         obj.setImage('https://d3dppz6vjvbt4r.cloudfront.net/landing_logo.png');
+        obj._doc().getElementById('logo').style.zIndex = '1';
       }
     );
 
@@ -48,29 +53,43 @@
         var emailForm = chimp._getForm()['EMAIL'];
         emailForm.style.height = '50px';
 
-        chimp.setTitle('Be a part of the adventure and subscribe for a free private beta test');
+        chimp.setTitle('Be the first for the next closed beta');
         chimp.setInfo('');
+        chimp.setButtonText('Request Closed Beta');
 
         document.getElementById('form').style.display = 'inline-block';
         document.getElementById('wut').style.display = 'inline-block';
+        document.getElementById('vr').style.display = 'inline-block';
       }
     );
 
     var here1 = document.getElementById('here-1');
     here1.addEventListener('mouseover', function() {
       document.getElementById('main').setAttribute('class', 'highlight');
+      document.getElementById('here-1-arrow').style.display = 'inline-block';
     });
     here1.addEventListener('mouseout', function() {
       document.getElementById('main').setAttribute('class', '');
+      document.getElementById('here-1-arrow').style.display = 'none';
     });
 
     var here2 = document.getElementById('here-2');
     here2.addEventListener('mouseover', function() {
       document.getElementById('form').setAttribute('class', 'highlight');
+      document.getElementById('here-2-arrow').style.display = 'inline-block';
     });
     here2.addEventListener('mouseout', function() {
       document.getElementById('form').setAttribute('class', '');
+      document.getElementById('here-2-arrow').style.display = 'none';
     });
   }
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80538061-1', 'auto');
+  ga('send', 'pageview');
 </script>
 </html>

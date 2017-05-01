@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+::shadow div {
+  z-index: 1 !important;
+}
+
 .highlight {
   box-shadow: 0 0 10px #940650;
 }
@@ -29,19 +33,42 @@ h1 {
   width: 90% !important;
 }
 
+#main, #form {
+  box-shadow: 0;
+  transition: box-shadow 0.33s;
+  z-index: 1;
+}
+
+#vr {
+  display: none;
+  border-left: 1px dashed #940650;
+  height: 66.67%;
+  transform: translateY(-100vh);
+  opacity: 0;
+  animation: vrPop 1s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+  z-index: 0;
+}
+
 #wut {
   display: none;
   position: relative;
   vertical-align: top;
-  width: 47%;
+  width: calc(50% - 36px);
   min-height: 58%;
   margin-top: 5px;
-  border-right: 1px dashed #940650;
   padding-left: 35px;
   padding-bottom: 60px;
+  animation: wutPop 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 2;
 }
 
 .here {
+  position: relative;
   padding: 2px 4px;
   border: 1px solid #940650;
   border-radius: 3px;
@@ -50,6 +77,34 @@ h1 {
   cursor: help;
   background-color: #940650;
   color: white !important;
+}
+#here-1-arrow {
+  pointer-events: none;
+  display: none;
+  background-image: url('https://d3dppz6vjvbt4r.cloudfront.net/land_arr_top.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 40vh;
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+}
+#here-2-arrow {
+  pointer-events: none;
+  display: none;
+  transform: rotate(-13deg);
+  background-image: url('https://d3dppz6vjvbt4r.cloudfront.net/land_arr_left.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 12vw;
+  width: 30vw;
+  position: absolute;
+  bottom: -3vw;
+  left: 40px;
+  z-index: 2;
 }
 
 .step {
@@ -90,7 +145,8 @@ h1 {
 
 #form {
   display: none;
-  width: 47%;
+  vertical-align: top;
+  width: calc(50% - 30px);
   margin-top: 8%;
   animation: formPop 2s;
   animation-delay: 1.2s;
@@ -104,6 +160,23 @@ h1 {
     transform: translateY(-10px);
   }
   100% {
+    opacity: 1;
+  }
+}
+@keyframes wutPop {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes vrPop {
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
     opacity: 1;
   }
 }
