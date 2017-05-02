@@ -18,8 +18,8 @@
   var title = document.getElementById('title');
   if (!results) {
     title.innerHTML = "Thank you!";
-    msg.innerHTML = "<p>We need to confirm your email address.</p>" +
-    "<p>To complete the request, please click the link in the email we just sent you.</p>";
+    msg.innerHTML = "<p>I need to confirm your email address.</p>" +
+    "<p>To complete the request, please click the link in the email I just sent you.</p>";
   } else if (results[0] && results[0].split('=')[1] === 'subscribed') {
     title.innerHTML = "Wooble registered you for the <b>closed beta</b>!"
     msg.innerHTML = "<p>I am glad to welcome you!</p>" +
