@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
   <script src="https://d1rqhuw03ddqun.cloudfront.net/dc8b37d8943b75ee28ffeaf54bbfe8d9e4c82daf-11/wooble.js"></script>
+  <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.core.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <link rel="icon" type="image/png" href="https://d3dppz6vjvbt4r.cloudfront.net/favico.png" />
   <title>Wooble | For the Web</title>
@@ -8,36 +10,11 @@
   <meta name="author" content="Jonathan Serra">
   <meta name="keywords" content="JS,wooble,template,webcomponents">
   <meta name="description" content="Looking for a tool that will help you to improve your website? Wooble might be for you. Request an early access now!">
-</head>
-<body>
-  <div id="main">
-    <h1>This page is ugly right? Let me introduce you Wooble, it will make it prettier just for you. First, tell it to do its job by pressing the button below</h1>
-    <div id="bubblegum">
-      <button id="notridifortis" onclick="imSureYouLookedAtTheSourceCode()">Okay Wooble, do your things then...</button>
-    </div>
-  </div>
-  <div id="wut">
-    <h1>I'm here to help you to improve your website. Here is what I just did!</h1>
-    <span class="step">1</span>
-    <p>
-      You clicked on the button to wake me up, I'm glad you did that!
-    </p>
-    <br /><span class="step">2</span>
-    <p>
-      I <b>retrieved two templates*</b> from my server, and I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">here<span id="here-1-arrow"></span></span> and the second one is <span id="here-2" class="here">here<span id="here-2-arrow"></span></span>.
-    </p>
-    <p id="in">
-      <i>* The two templates were made by my creator! But anyone can use them and anyone can create new templates and so can you! That's why you may join me by requesting an early access</i>
-    </p>
-  </div>
-  <div id="vr"></div>
-  <div id="form"></div>
-</body>
-<script>
+  <script type="text/javascript">
   function imSureYouLookedAtTheSourceCode() {
     // But to understand what's going on, you should try the beta, my friend. Email me at jonathan@wooble.io to know more :)
     Wb('landH').init('#main').then(
-      obj => {
+      function(obj) {
         obj.addTopText('Done. Hey! I\'m Wooble, your future website companion');
         obj.setImage('https://d3dppz6vjvbt4r.cloudfront.net/landing_logo.png');
         obj._doc().getElementById('logo').style.zIndex = '1';
@@ -45,7 +22,7 @@
     );
 
     Wb('chimp').init('#form').then(
-      chimp => {
+      function(chimp) {
         chimp.setChimpUrl('https://wooble.us15.list-manage.com/subscribe/post');
         chimp.setUserId('07a99e595d66585eca0e1f3f0');
         chimp.setChimpId('73768f974d');
@@ -83,6 +60,33 @@
       document.getElementById('here-2-arrow').style.display = 'none';
     });
   }
+  </script>
+</head>
+<body>
+  <div id="main">
+    <h1>This page is ugly right? Let me introduce you Wooble, it will make it prettier just for you. First, tell it to do its job by pressing the button below</h1>
+    <div id="bubblegum">
+      <button id="notridifortis" onclick="imSureYouLookedAtTheSourceCode()">Okay Wooble, do your things then...</button>
+    </div>
+  </div>
+  <div id="wut">
+    <h1>I'm here to help you to improve your website. Here is what I just did!</h1>
+    <span class="step">1</span>
+    <p>
+      You clicked on the button to wake me up, I'm glad you did that!
+    </p>
+    <br /><span class="step">2</span>
+    <p>
+      I <b>retrieved two templates*</b> from my server, and I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">here<span id="here-1-arrow"></span></span> and the second one is <span id="here-2" class="here">here<span id="here-2-arrow"></span></span>.
+    </p>
+    <p id="in">
+      <i>* The two templates were made by my creator! But anyone can use them and anyone can create new templates and so can you! That's why you may join me by requesting an early access</i>
+    </p>
+  </div>
+  <div id="vr"></div>
+  <div id="form"></div>
+</body>
+<script>
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
