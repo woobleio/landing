@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="./ty.css" />
@@ -16,14 +17,14 @@
   var msg = document.getElementById('message');
   var title = document.getElementById('title');
   if (!results) {
-    title.innerHTML = `Thank you!`;
-    msg.innerHTML = `<p>We need to confirm your email address.</p>
-    <p>To complete the request, please click the link in the email we just sent you.</p>`;
+    title.innerHTML = "Thank you!";
+    msg.innerHTML = "<p>We need to confirm your email address.</p>" +
+    "<p>To complete the request, please click the link in the email we just sent you.</p>";
   } else if (results[0] && results[0].split('=')[1] === 'subscribed') {
-    title.innerHTML = `Wooble registered you for the <b>closed beta</b>!`
-    msg.innerHTML = `<p>I am glad to welcome you!</p>
-    <p>I will come back to you to tell you when the closed beta is ready. It should be up in one month from now.</p>
-    <br /><p style="text-align: right"><i>Jonathan</i></p>`;
+    title.innerHTML = "Wooble registered you for the <b>closed beta</b>!"
+    msg.innerHTML = "<p>I am glad to welcome you!</p>" +
+    "<p>I will come back to you to tell you when the closed beta is ready. It should be up in one month from now.</p>" +
+    "<br /><p style='text-align: right'><i>Jonathan</i></p>";
   }
 </script>
 </html>
