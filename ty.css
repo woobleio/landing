@@ -20,3 +20,39 @@ p, h1 {
   border: 1px solid #940650;
   border-radius: 5px;
 }
+
+a {
+  text-decoration: none;
+  color: #940650;
+  margin-right: 15px;
+  text-align: center;
+}
+i.fa {
+  display: inline-block;
+  border: 1px solid #940650;
+  padding: 5px 10px;
+  border-radius: 3px;
+  height: 25px;
+  line-height: 25px;
+  width: 30px;
+}
+.fa-facebook:hover {
+  border-color: #3B5998;
+  background-color: #3B5998;
+  color: white;
+}
+.fa-twitter:hover {
+  border-color: #1DA1F2;
+  background-color: #1DA1F2;
+  color: white;
+}
+.fa-google-plus:hover {
+  border-color: #DB4437;
+  background-color: #DB4437;
+  color: white;
+}
+.fa-linkedin:hover {
+  border-color: #0077B5;
+  background-color: #0077B5;
+  color: white;
+}
