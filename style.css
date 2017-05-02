@@ -1,5 +1,7 @@
-body {
+body, html {
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 ::shadow div {
@@ -37,6 +39,9 @@ h1 {
   box-shadow: 0;
   transition: box-shadow 0.33s;
   z-index: 1;
+}
+#main {
+  height: 33.33%;
 }
 
 #vr {
@@ -85,8 +90,8 @@ h1 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 60vh;
-  width: 40vh;
+  height: 24vh;
+  width: 16vh;
   position: absolute;
   bottom: 5px;
   left: 40px;
@@ -99,8 +104,8 @@ h1 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 12vw;
-  width: 30vw;
+  height: 10vw;
+  width: 19vw;
   position: absolute;
   bottom: -3vw;
   left: 40px;
