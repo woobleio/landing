@@ -16,6 +16,14 @@ h1 {
   padding: 10px;
 }
 
+#logo-pop {
+  position: absolute;
+  top: 95px;
+  right: 50%;
+  -moz-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
 #bubblegum {
   width: 100%;
   text-align: center;
@@ -35,25 +43,30 @@ h1 {
   width: 90% !important;
 }
 
-#main, #form {
-  box-shadow: 0;
-  transition: box-shadow 0.33s;
-  z-index: 1;
-}
-#main {
-  height: 33.33%;
-}
-
 #vr {
   display: none;
   border-left: 1px dashed #940650;
-  height: 66.67%;
+  height: 100%;
   transform: translateY(-100vh);
   opacity: 0;
   animation: vrPop 1s;
   animation-delay: 1.2s;
   animation-fill-mode: forwards;
-  z-index: 0;
+  z-index: -1;
+  position: fixed;
+}
+
+#form {
+  display: none;
+  vertical-align: top;
+  width: calc(50% - 30px);
+  margin-top: 11%;
+  border-radius: 3px;
+  animation: formPop 2s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  padding: 10px;
 }
 
 #wut {
@@ -82,34 +95,6 @@ h1 {
   cursor: help;
   background-color: #940650;
   color: white !important;
-}
-#here-1-arrow {
-  pointer-events: none;
-  display: none;
-  background-image: url('https://d3dppz6vjvbt4r.cloudfront.net/land_arr_top.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 24vh;
-  width: 16vh;
-  position: absolute;
-  bottom: 20px;
-  left: 40px;
-}
-#here-2-arrow {
-  pointer-events: none;
-  display: none;
-  transform: rotate(-13deg);
-  background-image: url('https://d3dppz6vjvbt4r.cloudfront.net/land_arr_left.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 10vw;
-  width: 19vw;
-  position: absolute;
-  bottom: -3vw;
-  left: 93px;
-  z-index: 2;
 }
 
 .step {
@@ -144,21 +129,12 @@ h1 {
   font-weight: 300;
 }
 
-#wut h1 {
-  padding-right: 20%;
+input[type=submit] {
+  cursor: pointer;
 }
 
-#form {
-  display: none;
-  vertical-align: top;
-  width: calc(50% - 30px);
-  margin-top: 11%;
-  animation: formPop 2s;
-  animation-delay: 1.2s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  padding-left: 10px;
-  padding-bottom: 25px;
+#wut h1 {
+  padding-right: 20%;
 }
 
 @keyframes formPop {

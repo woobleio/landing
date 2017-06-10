@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://d1rqhuw03ddqun.cloudfront.net/dc8b37d8943b75ee28ffeaf54bbfe8d9e4c82daf-14/wooble.js"></script>
+  <script src="https://d2ncq0durb0run.cloudfront.net/472b07b9fcf2c2451e8781e944bf5f77cd8457c8-4/wooble.js"></script>
   <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.core.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <link rel="icon" type="image/png" href="https://d3dppz6vjvbt4r.cloudfront.net/favico.png" />
@@ -22,50 +22,87 @@
   <meta name="twitter:image" content="https://d3dppz6vjvbt4r.cloudfront.net/landing_logo.png">
   <script type="text/javascript">
   function imSureYouLookedAtTheSourceCode() {
-    // But to understand what's going on, you should try the beta, my friend. Email me at jonathan@wooble.io to know more :)
-    Wb('landH').init('#main').then(
-      function(obj) {
-        obj.addTopText('Done. Hey! I\'m Wooble, your future website companion');
-        obj.setImage('https://d3dppz6vjvbt4r.cloudfront.net/landing_logo.png');
-        obj._doc().getElementById('logo').style.zIndex = '1';
-      }
-    );
+    var banner = Wb('banner').init('#main', {
+      banner: {
+        color: '#940650',
+        height: '175px'
+      },
+      font: {
+        family: "Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif",
+        weight: 100,
+        color: 'white',
+        size: '2.5em'
+      },
+      text: 'Done. Hey! I\'m Wooble, your future website companion'
+    });
+    var popLog;
+    window.setTimeout(function() {
+      popLog = Wb('popLog').init('#logo-pop', {size: '180px',border:{width:'6px',color:'white'}});
+      document.getElementById('form').style.display = 'inline-block';
+      document.getElementById('wut').style.display = 'inline-block';
+      document.getElementById('vr').style.display = 'inline-block';
+    }, 2000);
 
-    Wb('chimp').init('#form').then(
-      function(chimp) {
-        chimp.setChimpUrl('https://wooble.us15.list-manage.com/subscribe/post');
-        chimp.setUserId('07a99e595d66585eca0e1f3f0');
-        chimp.setChimpId('73768f974d');
-
-        var emailForm = chimp._getForm()['EMAIL'];
-        emailForm.style.height = '50px';
-
-        chimp.setTitle('Be the first for the next closed beta');
-        chimp.setInfo('');
-        chimp.setButtonText('Request Closed Beta');
-
-        document.getElementById('form').style.display = 'inline-block';
-        document.getElementById('wut').style.display = 'inline-block';
-        document.getElementById('vr').style.display = 'inline-block';
-      }
-    );
+    var chimp = Wb('chimpForm').init('#form', {
+      submitTxt: 'Request Closed Beta',
+      form: {
+        height: '33px',
+        width: '80%',
+        fontSize: '1em'
+      },
+      label: {
+        font: {
+          color: '#940650',
+          family: "Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif",
+          size: '2em'
+        },
+        text: 'Be the first for the next closed beta and fill the box below with your <b>Email address</b>'
+      },
+      userId: '07a99e595d66585eca0e1f3f0',
+      action: 'https://wooble.us15.list-manage.com/subscribe/post',
+      id: '73768f974d',
+      ht: 'a3a30e4e99c965ff915011526eb087bcbce94864:MTQ5NzEwNTUwMi44NTcy'
+    });
 
     var here1 = document.getElementById('here-1');
     here1.addEventListener('mouseover', function() {
-      document.getElementById('here-1-arrow').style.display = 'inline-block';
+      banner.then(
+        obj => {
+          obj.document.querySelector('#banner').style.backgroundColor = '#FB9ECE';
+        }
+      );
     });
     here1.addEventListener('mouseout', function() {
-      document.getElementById('here-1-arrow').style.display = 'none';
+      banner.then(
+        obj => {
+          obj.document.querySelector('#banner').style.backgroundColor = '#940650';
+        }
+      );
     });
 
     var here2 = document.getElementById('here-2');
     here2.addEventListener('mouseover', function() {
-      document.getElementById('form').setAttribute('class', 'highlight');
-      document.getElementById('here-2-arrow').style.display = 'inline-block';
+      popLog.then(
+        obj => {
+          obj.document.querySelector('#logo').style.boxShadow = '0 0 50px #FB9ECE';
+        }
+      )
     });
     here2.addEventListener('mouseout', function() {
-      document.getElementById('form').setAttribute('class', '');
-      document.getElementById('here-2-arrow').style.display = 'none';
+      popLog.then(
+        obj => {
+          obj.document.querySelector('#logo').style.boxShadow = '0 0 0 #FB9ECE';
+        }
+      )
+    });
+
+    var here3 = document.getElementById('here-3');
+    var form = document.getElementById('form');
+    here3.addEventListener('mouseover', function() {
+      form.style.boxShadow = '0 0 50px #FB9ECE';
+    });
+    here3.addEventListener('mouseout', function() {
+      form.style.boxShadow = '0 0 0 #FB9ECE';
     });
   }
   </script>
@@ -77,6 +114,7 @@
       <button id="notridifortis" onclick="imSureYouLookedAtTheSourceCode()">Okay Wooble, do your things then...</button>
     </div>
   </div>
+  <span id="logo-pop"></span>
   <div id="wut">
     <h1>I'm here to help you to improve your website. Here is what I just did!</h1>
     <span class="step">1</span>
@@ -85,10 +123,10 @@
     </p>
     <br /><span class="step">2</span>
     <p>
-      I <b>retrieved two templates*</b> from my server, and I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">on the top<span id="here-1-arrow"></span></span> and the second one is <span id="here-2" class="here">on the right<span id="here-2-arrow"></span></span>.
+      I <b>retrieved three pieces*</b> from my server, I call them "creations" or "wooblies" (only for close friends). I <b>loaded</b> them in this page. You can see them, the first one is <span id="here-1" class="here">on the top</span>, the second one is <span id="here-2" class="here">on the middle-top</span> and finally the last one is <span id="here-3" class="here">on the right</span>.
     </p>
     <p id="in">
-      <i>* The two templates were made by my creator! But anyone can use them and anyone can create new templates and so can you! That's why you may join me by requesting an early access</i>
+      <i>* The three creations were made by my creator! But anyone can use them and anyone can create new ones and so can you! That's why you may join me by requesting an early access</i>
     </p>
   </div>
   <div id="vr"></div>
